@@ -1,0 +1,18 @@
+@charset "UTF-8";
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.pagingContainer {
+	text-align: center;
+}
+
+.pagingContainer span {
+	color: #27ae60;
+}
+
+.pagingContainer .selectedPage {
+	color: red;
+	font-weight: bold;
+}
