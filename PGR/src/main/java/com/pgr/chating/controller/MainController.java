@@ -21,10 +21,12 @@ public class MainController {
 	/*
 	 * 메인 페이지
 	 */
-	@RequestMapping("/index")
-	public ModelAndView index() {
+	
+	
+	@RequestMapping("/index1")
+	public ModelAndView index1() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("index");
+		mv.setViewName("index1");
 		return mv;
 	}
 	
@@ -35,6 +37,7 @@ public class MainController {
 		return mv;
 	}
 	
+
 	/**
 	 * 방 페이지
 	 * @return
@@ -87,7 +90,7 @@ public class MainController {
 			mv.addObject("roomName", params.get("roomName"));
 			mv.addObject("roomNumber", params.get("roomNumber"));
 			mv.setViewName("chat");
-		}else {
+		} else {
 			mv.setViewName("room");
 		}
 		return mv;

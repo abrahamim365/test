@@ -11,96 +11,209 @@
 * {
 	margin: 0;
 	padding: 0;
-	ouline-style:none;
+	box-sizing: border-box;
+	outline-style: none;
 }
 
-.container {
-	width: 500px;
-	margin: 0 auto;
-	padding: 25px
+ul, ol {
+	list-style: none;
 }
 
-.container h1 {
-	font-size: 20px;
-	padding: 15px 0;
-	background: #F18C7E;
-	color: white;
-	text-align: center;
+a {
+	color: #333;
+	text-decoration: none;
 }
 
-.chating {
-	position: relative;
-	display: block; 
-	background-color: #fff;
-	width: 500px;
-	height: 500px;
-	border: 1px solid black;
+img {
+	border: 0;
+	vertical-align: middle;
 }
 
-.msgContainer {
-	position: relative; 
-	display: block;
-	width : 100%;
+html {
+	user-select: none;
+}
+
+body {
+	font-family: tahoma, serif;
 	height: 100%;
 }
 
-.textContainer {
-	position: absolute;
-	left:0;
-	top:0;
-	width:100%;
-	height:10%;
+.wrap {
+	position: relative;
 }
 
-.chating .msgContainer .me {
+.pagew {
 	position: relative;
-	display:block;
-	left: 0;
-	top: 10%;
-	width: 50%;
-	height: 50px;
-	color: #000;
-	text-align: right;
-	font-weight: bold;
-	word-break: break-all;
-	margin: 5px 0;
-	border: 1px solid #888;
+	width: 500px;
+	margin: 0 auto;
+}
+
+.titlebox {
+	position: relative;
+	display: block;
+	width: 500px;
+	height: 100px;
+	padding: 25px;
+	margin: 20px 0;
+	border: 1px solid #ccc;
+	text-align: center;
+	text-transform: uppercase;
+	background: #F18C7E;
+	color: white;
+}
+
+.chatbox {
+	position: relative;
+	display: block;
+	width: 500px;
+	min-width: 390px;
+	height: 600px;
+	background: #fff;
+	margin: 20px 0;
+	padding: 25px;
+	box-shadow: 0 3px #ccc;
+	border: 1px solid #ccc;
+}
+
+.chatlogs::-webkit-scrollbar {
+	width: 10px;
+}
+
+.chatlogs::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #ccc;
+}
+
+.chatlogs {
+	position: relative;
+	display: block;
 	padding: 10px;
-	border-radius: 5px;
-	background-color: #FCFCFC;
-	color: #555;
-	float:right;
+	width: 100%;
+	height: 450px;
+	background: #fbfbfb;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
-.chating .msgContainer .others {
+.chat_me {
 	position: relative;
-	display:block;
-	left: 0;
-	top: 10%;
-	width: 50%;
-	height: 50px;
-	color: #000;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	margin-bottom: 10px;
+	display: flex;
+}
+
+.chat_others {
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	margin-bottom: 10px;
+	display: flex;
+}
+
+.chatmessage {
+
+	color: #fff;
+	font-size: 20px;
+	border-radius: 10px;
+}
+
+.me {
+	background: #5b84b1ff;
+	border-radius: 35%;
+	white-space: pre;
 	text-align: left;
-	font-weight: bold;
-	word-break: break-all;
-	margin: 5px 0;
-	border: 1px solid #888;
-	padding: 10px;
-	border-radius: 5px;
-	background-color: #FCFCFC;
-	color: #555;
-	float:left;
-	
+	padding: 9px 6px;
+	left: 61px;
 }
 
-input {
-	width: 330px;
-	height: 25px;
+.profileme {
+	width: 44px;
+	height: 44px;
+	background: #ccc;
+	border-radius: 50%;
+	text-align: center;
 }
 
-#yourMsg {
-	display: none;
+.others {
+	background: #fc766aff;
+    border-radius: 35%;
+    white-space: pre;
+    text-align: right;
+    padding: 9px 6px;
+    position: relative;
+    right: 40px;
+    margin-inline-start: auto;
 }
+
+.profileothers {
+	width: 44px;
+    height: 44px;
+    background: #ccc;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    right:-380px
+}
+
+
+.chatform {
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	margin-top: 20px;
+}
+
+.chatform textarea {
+	background: #fbfbfb;
+	width: 75%;
+	height: 50px;
+	border: 2px solid #ccc;
+	resize: none;
+	padding: 12px;
+	font-size: 18px;
+	font-family: tahoma, serif;
+	color: #333;
+}
+
+
+.chatform textarea::-webkit-scrollbar {
+	width: 10px;
+}
+
+.chatform textarea::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #ccc;
+}
+
+.chatform #yourMsg {
+	display:none;
+}
+
+.chatform button {
+    position: relative;
+    top: -53px;
+    right: -282px;
+    background: #fc766aff;
+    padding: 6px 15px;
+    margin: 0 61px;
+    border-radius: 3px;
+    font-size: 30px;
+    color: #fff;
+    border: none;
+    box-shadow: 0 3px 0 #333;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-transform: capitalize;
+}
+
+.chatform button:active {
+	background: #fb4737;
+}
+
+
 </style>
 </head>
 
@@ -131,14 +244,20 @@ input {
 					}
 				} else if (d.type == "message") {
 					if (d.sessionId == $("#sessionId").val()) {
-						$(".textContainer").append(
-								"<p class='me'>나 :" + d.msg + "</p>");
+						$(".chatmessage").append(
+								"<div class='chat_me'>"
+										+ "<span class='profileme'>"
+										+ d.userName + "</span>"
+										+ "<span class='me'> " + d.msg
+										+ "</span>" + "</div>");
 					} else {
-						$("#chating").append(
-								"<p class='others'>" + d.userName + " :"
-										+ d.msg + "</p>");
+						$(".chatmessage").append(
+								"<div class='chat_others'>"
+										+ "<span class='profileothers'>"
+										+ d.userName + "</span>"
+										+ "<span class='others'> " + d.msg
+										+ "</span>" + "</div>");
 					}
-
 				} else {
 					console.warn("unknown type!")
 				}
@@ -177,34 +296,32 @@ input {
 	}
 </script>
 <body>
-	<div id="container" class="container">
-		<h1>${roomName}의채팅방</h1>
-		<input type="hidden" id="sessionId" value=""> <input
-			type="hidden" id="roomNumber" value="${roomNumber}">
-
-		<div id="chating" class="chating">
-			<div class="msgContainer">
-				<div class="textContainer"></div>
+	<div class="wrap">
+		<div id="pagew" class="pagew">
+			<div class="titlebox">
+				<h1>${roomName}</h1>
 			</div>
-		</div>
-
-		<div id="yourName">
-			<table class="inputTable">
-				<tr>
-					<th>사용자명</th>
-					<th><input type="text" name="userName" id="userName"></th>
-					<th><button onclick="chatName()" id="startBtn">이름 등록</button></th>
-				</tr>
-			</table>
-		</div>
-		<div id="yourMsg">
-			<table class="inputTable">
-				<tr>
-					<th>메시지</th>
-					<th><input id="chatting" placeholder="보내실 메시지를 입력하세요."></th>
-					<th><button onclick="send()" id="sendBtn">보내기</button></th>
-				</tr>
-			</table>
+			<input type="hidden" id="sessionId" value=""> <input
+				type="hidden" id="roomNumber" value="${roomNumber}">
+			<div id="chatbox" class="chatbox">
+				<div class="chatlogs">
+					<div class="chat"></div>
+					<div class="chatmessage"></div>
+				</div>
+			
+			
+				<div class="chatform">
+					<div id="yourName" >	
+							<span><textarea id="userName" placeholder="Please enter your id."></textarea>
+							<button onclick="chatName()" id="startBtn">Click</button></span>			
+					</div>
+					
+					<div id="yourMsg" >
+							<textarea id="chatting" placeholder="Please enter your message."></textarea>
+							<button onclick="send()" id="sendBtn">send</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
