@@ -32,18 +32,20 @@
                 <div class="close_icon">
                     <i class="far fa-times-circle fa-3x" id="close_chat"></i>
                 </div>
-                <input type="hidden" id="sessionId" value=""> 
+                
                 <span>chatting room</span>
+                <input type="hidden" id="sessionId" value=""> 
             </div>
             <div class="chatbox">
                 <div class="chatlogs">
-                 
-                   
+                	<div class="chat"></div>
                 </div>
+                
                 <div class="chat_form">
                     <textarea id="chatting"></textarea>
                     <button onclick="send()" id="sendBtn">send</button>
                 </div>
+                
             </div>
         </div>
     </div>
