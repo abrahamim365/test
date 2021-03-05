@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koreait.apart.HomeMapper">
+ <insert id = "insApart" >		
+		INSERT INTO apartment_info
+		( 
+			dong, jibun, apartment_name, deal_amount, build_year, deal_year, 
+			deal_month, deal_day, area_for_exclusive_use, flr, location_cd
+		)
+		VALUES
+		<foreach item="item"  collection="list" separator=",">
+			( #{item.dong}, #{item.jibun}, #{item.apartment_name}, #{item.deal_amount}, #{item.build_year},
+			 #{item.deal_year}, #{item.deal_month}, #{item.deal_day}, #{item.area_for_exclusive_use},
+			 #{item.flr}, #{location_cd})
+		 </foreach>
+		 
+		<!--  <foreach item="item"  collection="list" open="(" separator="),(" close=")">
+			 #{item.dong}, #{item.jibun}, #{item.apartment_name}, #{item.deal_amount}, #{item.build_year},
+			 #{item.deal_year}, #{item.deal_month}, #{item.deal_day}, #{item.area_for_exclusive_use},
+			 #{item.flr}, #{item.regional_code}
+		 </foreach> -->
+		 
+ </insert>
+ 
+ <select id="selApart" resultType="ApartmentInfoDomain">
+ 	SELECT
+ 	A.*, B.local_nm
+ 	FROM apartment_info A
+ 	LEFT JOIN location_code B
+ 	ON A.location_cd = B.cd
+ 	WHERE location_cd = #{location_cd}
+ 	AND deal_year = #{deal_year}
+ 	AND deal_month = #{deal_month}
+ </select>
+ 
+
+</mapper>
